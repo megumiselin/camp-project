@@ -1,23 +1,32 @@
-import React from 'react';
+import React from 'react'; 
 import ReactDOM from 'react-dom';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function App() {
-  
-  function tick() {
-    const element = (
-      <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {new Date().toLocaleTimeString()}.</h2>
-      </div>
-    );
-    root.render(element);
 
-  }
-  setInterval(tick, 1000);
+ return(
+ 
+   <div className='App'>
+    <h1>React   Dersleri </h1>
+
+    <Hosgeldiniz isim="Megumi">
+        <h3>props.children burdan gelir</h3>
+    </Hosgeldiniz>
+   </div>
+
+ );  
+    
 }
+
 export default App ;
 
+function Hosgeldiniz (props)  {
+  return <div>  
+ <p>Hosgeldiniz , {props.isim}</p> 
+ {props.children} 
+</div>;
 
+}
 
